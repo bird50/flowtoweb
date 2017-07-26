@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "accountDS": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "mysql://root@localhost/lbmysql",
+    "database": "lbmysql",
+    "password": "",
+    "name": "accountDS",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html ng-app='myApp'> 
+<head>	
+  <script src="js/angular.min.js"></script><!--ver 1.3.16-->
+  <script src="js/angular-route.js"></script>
+  <script src="js/angular-resource.js"></script>
+  <script src="js/Script.js"></script>
+  <script src="js/lb-services.js"></script>
+  <script src="js/svg-assets-cache.js"></script>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- angular-material -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- moment use in datepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+<style> 
+.md-datepicker-calendar-pane{
+z-index: 1200
+}
+
+md-input-container {
+    display: inline-block;
+    margin-top: 2px;
+    width: 100%;
+}
+
+</style>
+</head>
+
+<body ng-controller="Myctrl">
+	<h3>RID-Gmail-Authentication</h3>
+		<div class="row-fluid">
+		<div class="col-lg-4">
+
+		<div class="input-group">
+	      <select class="form-control" ng-model="key">
+	      	<option value="">--- เลือกหน่วยงาน ---</option>
+	      	<option value="กรมชลประทาน">กรมชลประทาน</option>
+	      	<option value="สำนักงานชลประทานที่ 1">สำนักงานชลประทานที่ 1</option>
+			<option value="สำนักงานชลประทานที่ 2">สำนักงานชลประทานที่ 2</option>
+			<option value="สำนักงานชลประทานที่ 3">สำนักงานชลประทานที่ 3</option>
+			<option value="สำนักงานชลประทานที่ 4">สำนักงานชลประทานที่ 4</option>
+			<option value="สำนักงานชลประทานที่ 5">สำนักงานชลประทานที่ 5</option>
+			<option value="สำนักงานชลประทานที่ 6">สำนักงานชลประทานที่ 6</option>
+			<option value="สำนักงานชลประทานที่ 7">สำนักงานชลประทานที่ 7</option>
+			<option value="สำนักงานชลประทานที่ 8">สำนักงานชลประทานที่ 8</option>
+			<option value="สำนักงานชลประทานที่ 9">สำนักงานชลประทานที่ 9</option>
+			<option value="สำนักงานชลประทานที่ 10">สำนักงานชลประทานที่ 10</option>
+			<option value="สำนักงานชลประทานที่ 11">สำนักงานชลประทานที่ 11</option>
+			<option value="สำนักงานชลประทานที่ 12">สำนักงานชลประทานที่ 12</option>
+			<option value="สำนักงานชลประทานที่ 13">สำนักงานชลประทานที่ 13</option>
+			<option value="สำนักงานชลประทานที่ 14">สำนักงานชลประทานที่ 14</option>
+			<option value="สำนักงานชลประทานที่ 15">สำนักงานชลประทานที่ 15</option>
+			<option value="สำนักงานชลประทานที่ 16">สำนักงานชลประทานที่ 16</option>
+			<option value="สำนักงานชลประทานที่ 17">สำนักงานชลประทานที่ 17</option>
+			<option value="กองพัฒนาแหล่งน้ำขนาดกลาง">กองพัฒนาแหล่งน้ำขนาดกลาง</option>
+			<option value="กองพัสดุ">กองพัสดุ</option>
+			<option value="ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร">ศูนย์เทคโนโลยีสารสนเทศและการสื่อสาร</option>
+			<option value="สำนักเครื่องจักรกล">สำนักเครื่องจักรกล</option>
+			<option value="กองการเงินและบัญชี">กองการเงินและบัญชี</option>
+			<option value="กองแผนงาน">กองแผนงาน</option>
+			<option value="กลุ่มพัฒนาระบบบริหาร">กลุ่มพัฒนาระบบบริหาร</option>
+			<option value="สำนักงานเลขานุการกรม">สำนักงานเลขานุการกรม</option>
+			<option value="สำนักกฎหมายและที่ดิน">สำนักกฎหมายและที่ดิน</option>
+			<option value="สำนักบริหารจัดการน้ำและอุทกวิทยา">สำนักบริหารจัดการน้ำและอุทกวิทยา</option>
+			<option value="สำนักพัฒนาแหล่งน้ำขนาดใหญ่">สำนักพัฒนาแหล่งน้ำขนาดใหญ่</option>
+			<option value="สำนักสำรวจด้านวิศวกรรมและธรณีวิทยา">สำนักสำรวจด้านวิศวกรรมและธรณีวิทยา</option>
+			<option value="สำนักวิจัยและพัฒนา">สำนักวิจัยและพัฒนา</option>
+			<option value="สำนักออกแบบวิศวกรรมและสถาปัตยกรรม">สำนักออกแบบวิศวกรรมและสถาปัตยกรรม</option>
+			<option value="สำนักบริหารทรัพยากรบุคคล">สำนักบริหารทรัพยากรบุคคล</option>
+			<option value="สำนักบริหารโครงการ">สำนักบริหารโครงการ</option>
+			<option value="สำนักงานจัดรูปที่ดินกลาง">สำนักงานจัดรูปที่ดินกลาง</option>
+			<option value="กองส่งเสริมการมีส่วนร่วมของประชาชน">กองส่งเสริมการมีส่วนร่วมของประชาชน</option>
+			<option value="กลุ่มตรวจสอบภายใน">กลุ่มตรวจสอบภายใน</option>
+			<option value="กองประสานงานโครงการอันเนื่องมาจากพระราชดำริ">กองประสานงานโครงการอันเนื่องมาจากพระราชดำริ</option>
+		  </select>
+	      <span class="input-group-btn">
+	        <button class="btn btn-secondary" type="button" ng-click="searchEmp()">Search</button>
+	      </span>
+	    </div>
+		</div> <!-- select org-->
+		<label></label>
+		<div class="col-lg-4">
+		  <div class="input-group">
+		      <span class="input-group-addon">ค้นหาชื่อ</span>
+		      <input type="text" class="form-control" ng-model="query[queryBy]">
+    	  </div>
+		</div>
+    <hr>
+    <div class="row-fluid">
+      	<div class="col-md-8">
+        <table class="table table-striped">
+            <tr>
+                <th>ชื่อ</th>
+                <th>นามสกุล</th>
+                <th>ข้อมูล</th>
+                <th>อัพเดต</th>
+            </tr>
+            <tr ng-repeat="emp in AllOrg | filter: query | limitTo : 100" >
+                <td>{{emp.PN_NAME}}{{emp.PER_NAME}}</td>
+                <td>{{emp.PER_SURNAME}}</td>
+               
+               <td width="10"><button class="btn btn-info btn-xs" data-toggle="modal" data-target="#showGmail" ng-click="showEmail(emp)"> <span class="glyphicon glyphicon-list-alt" ></span></button></td>
+                <td><button class="btn btn-success btn-xs" data-toggle="modal" data-target="#addGmail" ng-click="modalEmp(emp)"> <span class="glyphicon glyphicon-pencil" ></span></button></td>
+            </tr>
+        </table>
+        </div>
+    </div>
+ 
+ <!-- Modal showGmail -->
+  <div class="modal fade" id="showGmail" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">ข้อมูล</h4>
+        </div>
+        <!-- Modal body-->
+        <div class="modal-body">
+        <label for="showdata"><span class="glyphicon glyphicon-list-alt"></span> ข้อมูล</label>
+		  <div id="showdata">
+		  <md-content layout-padding ng-cloak>
+		  <p><span class="glyphicon glyphicon-user"></span> ชื่อ: {{emp.PN_NAME}}{{emp.PER_NAME}}  {{emp.PER_SURNAME}}</p>
+		  <p ng-if='emp.PN_NAME1'><span class="glyphicon glyphicon-envelope"></span> ตำแหน่ง: {{emp.PN_NAME1}}</p>
+		  <p ng-if='emp.PL_NAME'><span class="glyphicon glyphicon-envelope"></span> ตำแหน่ง: {{emp.PL_NAME}}</p>
+		  <p ng-if='emp.EP_NAME'><span class="glyphicon glyphicon-envelope"></span> ตำแหน่ง: {{emp.EP_NAME}}</p>
+		  <p><span class="glyphicon glyphicon-envelope"></span> email: {{empemail.emp_email}}</p>
+		  </md-content>
+		  </div>
+        </div> <!-- //Modal body-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div> <!-- //Modal content-->
+    </div>
+  </div>  <!-- //Modal showGmail -->
+
+  <!-- Modal addGmail -->
+  <div class="modal fade" id="addGmail" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Register Email</h4>
+        </div>
+        <!-- Modal body-->
+        <div class="modal-body">
+        <div>
+        <span class="glyphicon glyphicon-user"></span> {{emp.PN_NAME}}{{emp.PER_NAME}}  {{emp.PER_SURNAME}}</label>
+        </div>
+        <!-- birthdate -->
+	    <label for="BD"><span class="glyphicon glyphicon-calendar"></span> Date of Birth</label>
+
+	    <div id=BD>
+		<md-content layout-padding ng-cloak>
+	  	<div layout-gt-xs="row">
+	      <div flex-gt-xs>
+	      <h5>เลือกวันเกิดเพื่อยืนยันตัวตน</h5>
+	      <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+	      </div>
+	    </div>
+	    </md-content>
+	    </div>
+		<!-- //birthdate -->
+		  <label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+		  <div id="email">
+		  <md-content layout-padding ng-cloak>
+		  <form class="form" role="form" name="form" novalidate="novalidate">
+		    <div class="form-group" ng-class='{"has-error": form.email.$invalid}'>
+		      <label>email</label>
+		      <input class="form-control" type="email" ng-model="email" name="email" required minlength="10" maxlength="100" ng-pattern="/^.+@gmail+\..+$/" required/>
+		      <div class="help-block">ใส่ Gmail เช่น email@gmail.com</div>
+		    </div>
+		    <div class="form-group" ng-class='{"has-error": form.emailRepeated.$invalid}'>
+		      <label>ยืนยัน email</label>
+		      <input class="form-control" ng-model="emailRepeated" same-as="email" name="emailRepeated" required minlength="10" maxlength="100" ng-pattern="/^.+@gmail+\..+$/" required/>
+		      <div class="help-block">ทำการยืนยัน email</div>
+		    </div>
+		  </form>
+		  </md-content>
+		  </div>
+  		<!-- ************** -->
+		  <!--<label for="email"><span class="glyphicon glyphicon-envelope"></span> Email</label>
+		  <div id="email" layout="column" ng-cloak>
+		  	<md-content layout-padding>
+			<form name="userForm">
+		    <md-input-container class="md-block" flex-gt-sm >
+	          <label>email@gmail.com</label>
+	          <input name="email" ng-model="empemail"
+	                 required minlength="10" maxlength="100" ng-pattern="/^.+@gmail+\..+$/" required/>
+	         
+	          <div class="hint" ng-show="showHints">How can we reach you?</div>
+	          <div ng-messages="userForm.email.$error" ng-hide="showHints">
+	            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+	              Your email must be between 10 and 100 characters long and look like an e-mail address.
+	            </div>
+	          </div>
+	        </md-input-container>
+	        <md-input-container class="md-block" flex-gt-sm >
+	          <label> Repeat Email</label>
+	          <input name="email" ng-model="empemail2" ng-match="empemail
+	                 required minlength="10" maxlength="100" ng-pattern="/^.+@gmail+\..+$/" required/>
+
+	          <div class="hint" ng-show="showHints">How can we reach you?</div>
+	          <div ng-messages="userForm.email.$error" ng-hide="showHints">
+	            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+	              Your email must be between 10 and 100 characters long and look like an e-mail address.
+	            </div>
+	          </div>
+	        </md-input-container>
+	        <span data-ng-show="userForm.empemail2.$error.match">Emails have to match!</span>
+	        </form>
+		    </md-content>
+		  </div>-->	  
+        </div> <!-- //Modal body-->
+
+        <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" ng-disabled="form.$invalid" ng-click="chkBD()">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div> <!-- //Modal content-->
+      
+    </div>
+  </div>  <!-- //Modal -->
+ 
+  </body>
+</html>
+
+

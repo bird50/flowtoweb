@@ -1,0 +1,21 @@
+{
+  "name": "Empemail",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "emp_email": {
+      "type": "string"
+    },
+    "PER_ID": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

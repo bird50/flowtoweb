@@ -1,0 +1,53 @@
+{
+  "name": "Account",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "PER_NAME": {
+      "type": "string"
+    },
+    "PER_SURNAME": {
+      "type": "string"
+    },
+    "LEVEL_NAME": {
+      "type": "string"
+    },
+    "ORG_NAME": {
+      "type": "string"
+    },
+    "ORG_NAME1": {
+      "type": "string"
+    },
+    "ORG_NAME2": {
+      "type": "string"
+    },
+    "PER_ID": {
+      "type": "number"
+    },
+    "emp_type": {
+      "type": "string"
+    },
+    "PN_NAME": {
+      "type": "string"
+    },
+    "PN_NAME1": {
+      "type": "string"
+    },
+    "PL_NAME": {
+      "type": "string"
+    },
+    "PER_BIRTHDATE": {
+      "type": "string"
+    },
+    "EP_NAME": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
