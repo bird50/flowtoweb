@@ -47,7 +47,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+      "Empemail": {
+        "type": "hasOne",
+        "model": "Empemail",
+        "foreignKey": "PER_ID"
+      }
+  },
   "acls": [],
   "methods": {}
 }

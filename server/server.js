@@ -24,6 +24,23 @@ boot(app, __dirname, function(err) {
   if (err) throw err;
 
   // start the server if `$ node server.js`
-  if (require.main === module)
-    app.start();
+  if (require.main === module){
+  	app.start();
+   /* var appModels = ['Account', 'Empemail'];
+
+var ds = app.dataSources.accountDS;
+
+ds.isActual(appModels, function(err, actual) {
+	//console.log('asdfasdfasdffd');
+  //if (!actual) {
+	
+    ds.autoupdate(appModels, function(err) {
+		console.log('AutoUpdat modellllllllllllllllllll');
+      if (err) throw (err);
+    }); //ds
+  //}
+}); //isActual
+   */
+  }
+    
 });

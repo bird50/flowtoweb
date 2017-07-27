@@ -118,6 +118,7 @@ $scope.chkBD = function(){
     console.log($scope.email);
     console.log($scope.emailRepeated);
     if($scope.myBD == $scope.filter_BD && $scope.email == $scope.emailRepeated){
+	/*
       Empemail.find({
               filter: {
                 where: {
@@ -126,26 +127,58 @@ $scope.chkBD = function(){
               }
             }).$promise.then(function(data){
               // get id from PER_ID 
-              $scope.emailresult = data[0];
-              $scope.updateEmail($scope.emailresult.id);
-              $scope.clearModal();
+				if(data.length>0){
+	                $scope.emailresult = data[0];
+	                $scope.updateEmail($scope.emailresult.id);
+				}else{
+					
+				}
+              
+             // $scope.clearModal();
               //console.log($scope.emailresult);
             });
+	*/
+		var data_update={
+			"id":$scope.emp.PER_ID,
+			"emp_email":$scope.email,
+			"PER_ID":$scope.emp.PER_ID
+		};
+		$scope.upsert_email(data_update);
+		
     }else{
       $window.alert("Your birthdate is not correct, Please try again");
       $scope.clearModal();      
     }
+	
+		
     console.log("*************************");
   }
 
 $scope.updateEmail = function(email_result){
+	
+	// ที่จริงตรงนี้ต้อง upsert
+	
   Empemail.prototype$updateAttributes(
      {id: email_result},
      {emp_email: $scope.email}
-  );
-
-  $window.alert("Your email is registered");
+  ).$promise
+  .then(function(dat){
+  	$window.alert("Your email is registered");
+	 $scope.clearModal();
+  },function(err){
+  	$window.alert("ไม่สามารถสมัครด้วย email นี้ได้ อาจเพราะมีการใช้ email นี้อยู่แล้ว ของบุคคลอื่น");
+  });
 }
+
+$scope.upsert_email=function(data_update){
+	Empemail.upsert(data_update).$promise
+		.then(function(data){
+		  	$window.alert("Your email is registered");
+			$scope.clearModal();
+		},function(err){
+		$window.alert("ไม่สามารถสมัครด้วย email นี้ได้ อาจเพราะมีการใช้ email นี้อยู่แล้ว ของบุคคลอื่น");
+	});
+};
 
 $scope.clearModal = function() {
     $scope.myDate = new Date();
