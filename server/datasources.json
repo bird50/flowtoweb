@@ -4,12 +4,12 @@
     "connector": "memory"
   },
   "accountDS": {
-    "host": "192.168.59.103",
-    "port": 3306,
-    "database": "ridgmail",
-    "password": "bird50",
-    "name": "accountDS",
-    "connector": "mysql",
-    "user": "root"
+      "host": "mysql",
+      "port": 3306,
+      "database": "ridgmail",
+      "password": "TTdib#50",
+      "name": "db",
+      "connector": "mysql",
+      "user": "root"
   }
 }
