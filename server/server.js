@@ -26,7 +26,8 @@ boot(app, __dirname, function(err) {
   // start the server if `$ node server.js`
   if (require.main === module){
   	app.start();
-   /* var appModels = ['Account', 'Empemail'];
+	/*
+    var appModels = ['Account', 'Empemail'];
 
 var ds = app.dataSources.accountDS;
 

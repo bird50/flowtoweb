@@ -15,7 +15,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+      "Account": {
+        "type": "belongsTo",
+        "model": "Account",
+        "foreignKey": "PER_ID"
+      }
+  },
   "acls": [],
   "methods": {}
 }
