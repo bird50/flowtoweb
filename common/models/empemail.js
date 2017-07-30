@@ -21,7 +21,10 @@ module.exports = function(Empemail) {
 				}
 		};
        Empemail.findOne(filter,function(err,data){
-		   if(err){cb(err);}
+		   if(err){ 
+			   console.log("err 1");
+			   cb(err);
+		   }
 		   var result= JSON.parse(JSON.stringify(data));
 		   console.log('result:'+JSON.stringify(result));
 		   //cb(null,result);
@@ -33,11 +36,13 @@ module.exports = function(Empemail) {
 				}else{
 	 			   var error = new Error("Not found");
 	 			   error.status = 404;
+				   console.log("err 2");
 	 			   cb(error);
 			   }
 		   }else{
 			   var error = new Error("Not found");
 			   error.status = 404;
+			   console.log("err 3");
 			   //return cb(error);
 			   cb(error);
 		   }
